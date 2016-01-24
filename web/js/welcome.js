@@ -1,5 +1,6 @@
-
   var days = ['sundays', 'mondays', 'tuesdays', 'wednesdays', 'thursdays', 'fridays', 'saturdays'];
+  var d = new Date();
+  var today = d.getDay();
 
   function init() {
     // Create empty 365 day graph
@@ -14,6 +15,8 @@
         var box = document.createElement('td');
         box.setAttribute('id', days[i] + '_day_' + j);
         box.classList.add('boxday');
+        if (j === 1 && i > today) continue;
+          
         box.onclick = function(event){
           var target = event.target;
           if (hasClass(target, 'green')) {
@@ -22,12 +25,11 @@
             target.classList.add('green');
           }
         };
+
         tr.appendChild(box);
       }
     }
   };
-
-
 
 function resetGraph() {
   var calendar = document.getElementById('github_calendar');

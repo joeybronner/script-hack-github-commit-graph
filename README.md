@@ -1,8 +1,11 @@
 ### How to
 Step 01: Create a new repo.  
 Step 02: Create an empty folder on your computer.  
-Step 03: Add dates.txt to that folder and modify with the dates you want to "draw" to your public contributions chart.  
+Step 03: Add a new and empty dates.txt file to that folder
 Step 04: Add dates.sh to that folder and change the author name with your infos (Ex: --author="Joey Bronner <joeybronner@gmail.com>").  
+
+Website steps...  
+
 Step 05: Open a terminal window and cd to your folder where you have dates.txt and dates.sh in it.  
 Step 06: Run git init to initialize the Git repo.  
 Step 07: Run ./dates.sh.  
