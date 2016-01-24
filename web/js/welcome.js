@@ -1,11 +1,7 @@
-(function() {
-  var init, isMobile, setupHero;
 
-  isMobile = $(window).width() < 567;
+  var days = ['sundays', 'mondays', 'tuesdays', 'wednesdays', 'thursdays', 'fridays', 'saturdays'];
 
-  init = function() {
-    var days = ['sundays', 'mondays', 'tuesdays', 'wednesdays', 'thursdays', 'fridays', 'saturdays'];
-
+  function init() {
     // Create empty 365 day graph
     for (var i = 0, iLen = days.length; i < iLen; i++) {
       var tr = document.getElementById(days[i]);
@@ -18,29 +14,17 @@
         var box = document.createElement('td');
         box.setAttribute('id', days[i] + '_day_' + j);
         box.classList.add('boxday');
+        box.onclick = function(event){
+          var target = event.target;
+          target.classList.add('green');
+        };
         tr.appendChild(box);
       }
     }
-
-    // Tease H.A.C.K letters
-      for (var j = 0; j < 7; j++) {
-        var day = days[j];
-        for (var k = 1; k < 53; k++) {
-            var box = document.getElementById(day + '_day_' + k);
-            console.log(day + '_day_' + k);
-            box.classList.add('green');
-            sleepFor(10);
-        }
-      }
   };
 
-  sleepFor = function(sleepDuration) {
-    var now = new Date().getTime();
-    while(new Date().getTime() < now + sleepDuration) {
-      // Nothing, just sleep.
-    }
-  };
-  
-  init();
+function setGreen() {
+  console.log('green');
+};
 
-}).call(this);
+window.onload = init;

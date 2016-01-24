@@ -9,6 +9,7 @@ body {
   height:8px;
   width:8px;
   border:1px solid gray;
+  cursor:pointer;
 }
 
 .day-of-wk {
