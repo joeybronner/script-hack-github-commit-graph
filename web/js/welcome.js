@@ -16,15 +16,29 @@
         box.classList.add('boxday');
         box.onclick = function(event){
           var target = event.target;
-          target.classList.add('green');
+          if (hasClass(target, 'green')) {
+            target.classList.remove('green');
+          } else {
+            target.classList.add('green');
+          }
         };
         tr.appendChild(box);
       }
     }
   };
 
-function setGreen() {
-  console.log('green');
+
+
+function resetGraph() {
+  var calendar = document.getElementById('github_calendar');
+  var boxes = document.getElementsByClassName('boxday');
+  for (var i = 0, iLen = boxes.length; i < iLen; i++) {
+    boxes[i].classList.remove('green');
+  }
 };
+
+function hasClass(target, className) {
+  return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
+}
 
 window.onload = init;
