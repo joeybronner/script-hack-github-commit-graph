@@ -30,7 +30,7 @@ body {
   letter-spacing: 3px;
   text-decoration: none;
   cursor: pointer;
-  width: 140px;
+  width: 200px;
   font-size: 0.8em;
   line-height: 1.3em; }
 
@@ -41,6 +41,15 @@ body {
 .hero-wrap {
   height: 100%;
   overflow: hidden; }
+
+.steps {
+  width: 80%;
+  text-align: left;
+}
+
+.steps p {
+  text-align: left;
+}
 
 table.showcase {
   height: 100%;
@@ -80,13 +89,29 @@ table.showcase {
       @media (max-width: 567px) {
         table.showcase .showcase-inner h2 {
           font-size: 14px; } }
-    table.showcase .showcase-inner p {
-      text-align: center; }
+
+  table.showcase.hero {
+    text-align: center; }
+    table.showcase.hero .tooltip-target-demo {
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      zoom: 1;
+      *display: inline;
+      border: 2px dotted black;
+      margin: 5rem auto;
+      padding: 3rem; }
+      @media (max-width: 567px) {
+        table.showcase.hero .tooltip-target-demo {
+          padding: 1rem; } }
+
+
   table.showcase.about {
     text-align: left;
-    background: #fff1dd; }
+    background: #A0C3FF; }
     table.showcase.about a {
-      color: #c96c24; }
+      color: black; }
     table.showcase.about p {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -108,18 +133,31 @@ table.showcase {
       max-height: 300px;
       margin-left: auto;
       margin-right: auto; }
-  table.showcase.hero {
-    text-align: center; }
-    table.showcase.hero .tooltip-target-demo {
-      display: -moz-inline-stack;
-      display: inline-block;
-      vertical-align: middle;
-      *vertical-align: auto;
-      zoom: 1;
-      *display: inline;
-      border: 2px dotted black;
-      margin: 5rem auto;
-      padding: 3rem; }
-      @media (max-width: 567px) {
-        table.showcase.hero .tooltip-target-demo {
-          padding: 1rem; } }
+
+
+  table.showcase.script {
+    text-align: left;
+    background: #ED9D97; }
+    table.showcase.script a {
+      color: black; }
+    table.showcase.script p {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 650px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+      table.showcase.script p > code {
+        background: rgba(0, 0, 0, 0.05); }
+    table.showcase.script pre {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 650px;
+      max-width: 100%;
+      max-height: 300px;
+      margin-left: auto;
+      margin-right: auto; }

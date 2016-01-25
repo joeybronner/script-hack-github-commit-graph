@@ -17,7 +17,11 @@
             <div class="showcase-inner">
                 <div class="tooltip-target-demo">
                     <h1>Hack Github Commit Graph</h1>
-                    <h2>Select your expected commit dates and scroll down</h2>
+                    <div class="steps">
+                        <p><b>Step 01</b>: Create a new repo.</p>
+                        <p><b>Step 02</b>: Create an empty folder on your computer.</p>
+                        <p><b>Step 03</b>: Select your expected commit dates and scroll down</p>
+                    </div>
                     <table id="github_calendar">
                         <tr id="sundays"></tr>
                         <tr id="mondays"></tr>
@@ -36,15 +40,40 @@
     <table class="showcase about"><tr><td>
         <div class="showcase-inner">
             <h1>Copy / Paste</h1>
-            <p>Copy and paste the generated dates below in the <b>dates.txt</b> file</p>
-            <pre class="language-markup">
-                Mon Aug 17
-                Tue Aug 18
-                Wed Aug 19
-                Thu Aug 20
-                Fri Aug 21
+
+            <p><b>Step 04</b>: Create a new file named <u>dates.txt</u>.</p>
+            <p><b>Step 05</b>: Copy and paste the dates below in the <u>dates.txt</u> file.</p>
+            <pre id="dates-txt" class="language-markup">
+                Mon Aug 17 2015
             </pre>
-            <p><a class="button" onclick="">Copy</a></p>
+            <p><a class="button" onclick="copyDates()">Copy to clipboard</a></p>
+        </div>
+    </td></tr></table>
+
+    <table class="showcase script"><tr><td>
+        <div class="showcase-inner">
+            <h1>Execute bash</h1>
+
+            <p><b>Step 04</b>: Create a new file named <u>dates.sh</u>.</p>
+            <p><b>Step 05</b>: Copy and paste the code below in the <u>dates.sh</u> file.</p>
+            <pre class="language-markup">
+#!/bin/sh
+
+while read date
+do
+    fileName=`echo "$date" | tr " " "_"`
+    year=${date:(-4)}
+    minimeDate="${date%?????}"
+    commitDate="$minimeDate 14:00 $year +0500"
+    name=$(git config user.name)
+    email=$(git config user.email)
+    echo "Creating file... $fileName"
+    touch "$fileName"
+    git add "$fileName"
+    git commit --date="$commitDate" --author="$name <$email>" -m "$fileName"
+done < dates.txt
+            </pre>
+            <p><a class="button" onclick="">Copy to clipboard</a></p>
         </div>
     </td></tr></table>
 
