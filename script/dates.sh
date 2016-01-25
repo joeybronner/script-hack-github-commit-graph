@@ -3,9 +3,13 @@
 while read date
 do
     fileName=`echo "$date" | tr " " "_"`
-    date="$date 14:00 2015 +0500"
+    year=${date:(-4)}
+    minimeDate="${date%?????}"
+    commitDate="$minimeDate 14:00 $year +0500"
+    name=$(git config user.name)
+    email=$(git config user.email)
     echo "Creating file... $fileName"
     touch "$fileName"
     git add "$fileName"
-    git commit --date="$date" --author="Joey Bronner <joeybronner@gmail.com>" -m "$fileName"
+    git commit --date="$commitDate" --author="$name <$email>" -m "$fileName"
 done <dates.txt
