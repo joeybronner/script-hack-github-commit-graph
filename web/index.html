@@ -43,9 +43,7 @@
 
             <p><b>Step 04</b>: Create a new file named <u>dates.txt</u>.</p>
             <p><b>Step 05</b>: Copy and paste the dates below in the <u>dates.txt</u> file.</p>
-            <pre id="dates-txt" class="language-markup">
-                Mon Aug 17 2015
-            </pre>
+            <pre id="dates-txt" class="language-markup"></pre>
             <p><a class="button" onclick="copyDates()">Copy to clipboard</a></p>
         </div>
     </td></tr></table>
@@ -54,8 +52,8 @@
         <div class="showcase-inner">
             <h1>Execute bash</h1>
 
-            <p><b>Step 04</b>: Create a new file named <u>dates.sh</u>.</p>
-            <p><b>Step 05</b>: Copy and paste the code below in the <u>dates.sh</u> file.</p>
+            <p><b>Step 06</b>: Create a new file named <u>dates.sh</u>.</p>
+            <p><b>Step 07</b>: Copy and paste the code below in the <u>dates.sh</u> file.</p>
             <pre class="language-markup">
 #!/bin/sh
 
@@ -74,6 +72,18 @@ do
 done < dates.txt
             </pre>
             <p><a class="button" onclick="">Copy to clipboard</a></p>
+        </div>
+    </td></tr></table>
+
+    <table class="showcase commit"><tr><td>
+        <div class="showcase-inner">
+            <h1>Commit & push origin master</h1>
+            <p><b>Step 08</b>: cd to directory.</p>
+            <pre class="language-markup">cd ../dev/script-hack-github</pre>
+            <p><b>Step 09</b>: Sync local project with github repository</p>
+            <pre class="language-markup">git remote add origin git@github.com:your-username/your-project-name.git</pre>
+            <p><b>Step 10</b>: Push it local changes to master</p>
+            <pre class="language-markup">git push --set-upstream origin master</pre>
         </div>
     </td></tr></table>
 
