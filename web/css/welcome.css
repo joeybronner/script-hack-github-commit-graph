@@ -34,6 +34,22 @@ body {
   font-size: 0.8em;
   line-height: 1.3em; }
 
+.button-copy {
+  display: inline-block;
+  border: 0;
+  color: #333333;
+  padding: 1em 1.25em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  float:right;
+  background: url(../img/copy.png);
+  background-repeat: no-repeat;
+  font-size: 0.8em;
+  line-height: 1.3em; }
+
 .button.dark {
   background: #333333;
   color: white; }
@@ -49,6 +65,21 @@ body {
 
 .steps p {
   text-align: left;
+}
+
+.share-buttons {
+  margin: 4em auto;
+  text-align: center;
+}
+.share-button {
+  display: inline-block;
+}
+.retweet-button {
+  width: 100px;
+  margin-left: 20px;
+}
+.github-stars {
+  width: 100px;
 }
 
 table.showcase {
@@ -179,6 +210,33 @@ table.showcase {
       table.showcase.commit p > code {
         background: rgba(0, 0, 0, 0.05); }
     table.showcase.commit pre {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 680px;
+      max-width: 100%;
+      max-height: 300px;
+      margin-left: auto;
+      margin-right: auto; }
+
+  table.showcase.result {
+    text-align: left;
+    background: white; }
+    table.showcase.result a {
+      color: black; }
+    table.showcase.result p {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 680px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+      table.showcase.result p > code {
+        background: rgba(0, 0, 0, 0.05); }
+    table.showcase.result pre {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;

@@ -1,19 +1,20 @@
 ### How to
-Step 01: Create a new repo.
-Step 02: Create an empty folder on your computer.
-Step 03: Add a new and empty dates.txt file to that folder
-
-Website steps...
-
-Step 05: Open a terminal window and cd to your folder where you have dates.txt and dates.sh in it.
-Step 06: Run git init to initialize the Git repo.
-Step 07: Run ./dates.sh.
-Step 08: Run git remote add origin git@github.com:your-username/your-project-name.git.
-Step 09: Run git push --set-upstream origin master.
-Step 10: Visit your user page to see the chart (Ex: http://github.com/your-username/your-project-name).
+[Demo step by step](http://joeybronner.fr/hack-github-commit-graph/)
+[Demo video](https://www.youtube.fr)
 
 ### Date format in dates.txt file
 Day Mon DD YEAR
 Wed Dec 30 2015
 
+### Screenshots
+Select your expected commit dates and scroll down
+![One](http://joeybronner.fr/hack-github-commit-graph/img/1.PNG)
+Copy / Paste
+![Two](http://joeybronner.fr/hack-github-commit-graph/img/2.PNG)
+Execute bash
+![Thr](http://joeybronner.fr/hack-github-commit-graph/img/3.PNG)
+Commit & push origin master
+![Fou](http://joeybronner.fr/hack-github-commit-graph/img/4.PNG)
 
+### Thanks
+[@Adam Schwartz](https://github.com/adamschwartz) for his web template and the hack code structure.
