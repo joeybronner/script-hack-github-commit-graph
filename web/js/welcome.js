@@ -41,6 +41,8 @@ function resetGraph() {
   for (var i = 0, iLen = boxes.length; i < iLen; i++) {
     boxes[i].classList.remove('green');
   }
+  generateDatesFromCalendar();
+
 };
 
 function hasClass(target, className) {
@@ -77,10 +79,6 @@ function generateDatesFromCalendar() {
       datesTxt.innerText += dateToString.substring(0,15) + String.fromCharCode(13);
     }
   }
-}
-
-function copyToClipboard(elementId) {
-
 }
 
 function drawHack() {
