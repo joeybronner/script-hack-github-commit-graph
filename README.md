@@ -1,10 +1,9 @@
 ### How to
-[Demo step by step](http://joeybronner.fr/hack-github-commit-graph/)
-[Demo video](https://www.youtube.fr)
+[Demo step by step](http://joeybronner.fr/hack-github-commit-graph/)  
 
 ### Date format in dates.txt file
-Day Mon DD YEAR
-Wed Dec 30 2015
+Day Mon DD YEAR  
+Wed Dec 30 2015  
 
 ### Screenshots
 Select your expected commit dates and scroll down

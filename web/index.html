@@ -1,0 +1,114 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hack Github Commit Graph</title>
+    <meta name="description" content="Website description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Welcome docs styles -->
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="css/welcome.css" />
+</head>
+<body>
+    <div class="hero-wrap">
+        <table class="showcase hero"><tr><td>
+            <div class="showcase-inner">
+                <div class="tooltip-target-demo">
+                    <h1>Hack Github Commit Graph</h1>
+                    <!--<p><a href="http://google.fr" target="_blank">Demo Video</a></p>-->
+                    <div class="steps">
+                        <p><b>Step 01</b>: Create a new repo.</p>
+                        <p><b>Step 02</b>: Create an empty folder on your computer.</p>
+                        <p><b>Step 03</b>: Select your expected commit dates and scroll down</p>
+                    </div>
+                    <table id="github_calendar">
+                        <tr id="sundays"></tr>
+                        <tr id="mondays"></tr>
+                        <tr id="tuesdays"></tr>
+                        <tr id="wednesdays"></tr>
+                        <tr id="thursdays"></tr>
+                        <tr id="fridays"></tr>
+                        <tr id="saturdays"></tr>
+                    </table>
+                    <p><a class="button" onclick="resetGraph()">Reset</a></p>
+                    <p><a class="button" onclick="drawHack()">Generate "Hack it!"</a></p>
+                </div>
+            </div>
+        </td></tr></table>
+    </div>
+
+    <table class="showcase about"><tr><td>
+        <div class="showcase-inner">
+            <h1>Copy / Paste</h1>
+
+            <p><b>Step 04</b>: Create a new file named <u>dates.txt</u>.</p>
+            <p><b>Step 05</b>: Copy and paste the dates below in the <u>dates.txt</u> file.</p>
+            <pre id="dates-txt" class="language-markup"></pre>
+            <p><a class="button btn" data-clipboard-target="#dates-txt">Copy to clipboard</a></p>
+        </div>
+    </td></tr></table>
+
+    <table class="showcase script"><tr><td>
+        <div class="showcase-inner">
+            <h1>Execute bash</h1>
+
+            <p><b>Step 06</b>: Create a new file named <u>dates.sh</u>.</p>
+            <p><b>Step 07</b>: Copy and paste the code below in the <u>dates.sh</u> file.</p>
+            <pre id="bash-script" class="language-markup">#!/bin/sh
+
+while read date
+do
+    fileName=`echo "$date" | tr " " "_"`
+    year=${date:(-4)}
+    minimeDate="${date%?????}"
+    commitDate="$minimeDate 14:00 $year +0500"
+    name=$(git config user.name)
+    email=$(git config user.email)
+    echo "Creating file... $fileName"
+    touch "$fileName"
+    git add "$fileName"
+    git commit --date="$commitDate" --author="$name <$email>" -m "$fileName"
+done < dates.txt</pre>
+            <p><a class="button btn" data-clipboard-target="#bash-script">Copy to clipboard</a></p>
+        </div>
+    </td></tr></table>
+
+    <table class="showcase commit"><tr><td>
+        <div class="showcase-inner">
+            <h1>Commit & push origin master</h1>
+            <p><b>Step 08</b>: cd to directory & init</p>
+            <pre id="step08" class="language-markup">cd path/to/the/repository<button class="button-copy btn" data-clipboard-target="#step08"></button></pre>
+            <pre id="step08b" class="language-markup">git init<button class="button-copy btn" data-clipboard-target="#step08b"></button></pre>
+            <p><b>Step 09</b>: Sync local project with github repository</p>
+            <pre id="step09" class="language-markup">git remote add origin git@github.com:your-username/your-project-name.git<button class="button-copy btn" data-clipboard-target="#step09"></button></pre>
+            <p><b>Step 10</b>: Push it local changes to master</p>
+            <pre id="step10" class="language-markup">git push --set-upstream origin master<button class="button-copy btn" data-clipboard-target="#step10"></button></pre>
+        </div>
+    </td></tr></table>
+
+    <table class="showcase last-showcase no-next-arrow share"><tr><td>
+        <div class="showcase-inner">
+            <h1>Contemplate your graph</h1>
+            <h2>Share</h2>
+            <!-- Share -->
+            <div class="share-buttons">
+                <div class="share-button retweet-button">
+                    <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://github.com/joeybronner/script-hack-github-commit-graph" data-text="Simple method to hack the #github commits graph" data-count="horizontal" data-via="joeybr">Tweet</a>
+                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                </div>
+                <div class="share-button github-stars-button">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=joeybronner&amp;repo=script-hack-github-commit-graph&amp;type=watch&amp;count=true&amp;size=small" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+                </div>
+            </p>
+        </div>
+    </td></tr></table>
+
+    <!-- Welcome page -->
+    <script src="js/jquery.js"></script>
+    <script src="js/welcome.js"></script>
+    <script src="js/clipboard.min.js"></script>
+
+</body>
+</html>
