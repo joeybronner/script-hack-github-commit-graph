@@ -3,7 +3,7 @@
 while read date
 do
     fileName=`echo "$date" | tr " " "_"`
-    year=${date:(-4)}
+    year=`echo $fileName | tail -c 5`
     minimeDate="${date%?????}"
     commitDate="$minimeDate 14:00 $year +0500"
     name=$(git config user.name)
@@ -12,4 +12,4 @@ do
     touch "$fileName"
     git add "$fileName"
     git commit --date="$commitDate" --author="$name <$email>" -m "$fileName"
-done <dates.txt
+done < dates.txt
